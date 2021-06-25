@@ -16,7 +16,7 @@ class UpdateProduct extends Component {
 
 	componentDidMount() {
 		const id = this.props.match.params.id;
-		fetch(`http://localhost:3000/product/${id}`, {credentials: 'include'})
+		fetch(`http://localhost:3000/admin/product/${id}`, {credentials: 'include'})
 			.then(res => res.json())
 			.then(product => { this.setState(product) })
 	}
@@ -28,7 +28,7 @@ class UpdateProduct extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		fetch(`http://localhost:3000/product`, {
+		fetch(`http://localhost:3000/admin/product`, {
 			method: 'POST',
 			withCredentials: true,
 			credentials: 'include',
@@ -39,9 +39,9 @@ class UpdateProduct extends Component {
 		})
 		.then(res => {
 			if (res.status === 200) {
-				return this.props.history.push('/adminShop')
+				return this.props.history.push('/admin/shop')
 			} else {
-				return this.props.history.push('/adminShop')
+				return this.props.history.push('/admin/shop')
 			}
 		})
 		.catch(err => console.log(err));
@@ -49,7 +49,7 @@ class UpdateProduct extends Component {
 
 	handleDelete(event) {
 		event.preventDefault();
-		fetch(`http://localhost:3000/deleteProduct`, {
+		fetch(`http://localhost:3000/admin/deleteProduct`, {
 			method: 'POST',
 			withCredentials: true,
 			credentials: 'include',
@@ -60,7 +60,7 @@ class UpdateProduct extends Component {
 		})
 		.then(res => {
 			if (res.status === 200) {
-				return this.props.history.push('/adminShop')
+				return this.props.history.push('/admin/shop')
 			} else {
 				const error = new Error(res.error);
 				throw error;

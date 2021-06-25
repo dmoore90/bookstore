@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home.js';
-import AdminLogin from './pages/AdminLogin.js';
-import AdminLogout from './pages/AdminLogout.js';
-import AdminShop from './pages/AdminShop.js';
-import CreateProduct from './pages/CreateProduct.js';
-import Product from './pages/Product.js';
+import AdminLogin from './pages/admin/Login.js';
+import AdminLogout from './pages/admin/Logout.js';
+import AdminShop from './pages/admin/Shop.js';
+import CreateProduct from './pages/admin/CreateProduct.js';
+import Product from './pages/admin/Product.js';
 import Shop from './pages/Shop.js';
+import Register from './pages/customer/Register.js';
+import Profile from './pages/customer/Profile.js';
+import Login from './pages/customer/Login.js';
+import Logout from './pages/customer/Logout.js';
 
 class App extends Component {
 	render() {
@@ -15,15 +19,21 @@ class App extends Component {
 			<div>
 				<Switch>
 					<Route exact path="/" component={Home}/>
-
-					<Route path="/adminLogin" component={AdminLogin}/>
-					<Route path="/adminLogout" component={AdminLogout}/>
-					
-					<Route path="/adminShop" component={AdminShop}/>
-					<Route path="/createProduct" component={CreateProduct}/>
-					<Route path="/product/:id" component={Product}/>
-
 					<Route path="/shop" component={Shop}/>
+
+					<Route path="/admin/Login" component={AdminLogin}/>
+					<Route path="/admin/logout" component={Logout}/>
+					
+					<Route path="/admin/shop" component={AdminShop}/>
+					<Route path="/admin/createProduct" component={CreateProduct}/>
+					<Route path="/admin/product/:id" component={Product}/>
+
+					<Route path="/customer/shop" component={Shop}/>
+
+					<Route path="/customer/register" component={Register}/>
+					<Route path="/customer/login" component={Login}/>
+					<Route path="/customer/profile" component={Profile}/>
+					<Route path="/customer/logout" component={Logout}/>
 				</Switch>
 			</div>
 		)

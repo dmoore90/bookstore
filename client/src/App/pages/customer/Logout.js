@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-class AdminLogout extends Component {
+class Logout extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -12,7 +12,7 @@ class AdminLogout extends Component {
 	}
 
 	handleSubmit() {
-		fetch('http://localhost:3000/AdminLogout', {
+		fetch('http://localhost:3000/customer/logout', {
 			method: 'POST',
 			withCredentials: true,
 			credentials: 'include',
@@ -33,4 +33,4 @@ class AdminLogout extends Component {
 	}
 }
 
-export default AdminLogout;
+export default Logout;

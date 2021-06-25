@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import '../../static/styles.css'
+import '../../../static/styles.css'
 
-class AdminLogin extends Component {
+class Login extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -20,7 +20,7 @@ class AdminLogin extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		fetch('http://localhost:3000/adminLogin', {
+		fetch('http://localhost:3000/login', {
 			method: 'POST',
 			withCredentials: true,
 			credentials: 'include',
@@ -31,7 +31,7 @@ class AdminLogin extends Component {
 		})
 		.then(res => {
 			if (res.status === 200) {
-				return this.props.history.push('/adminShop');
+				return this.props.history.push('/customer/profile');
 			} else {
 				return this.props.history.push('/');
 			}
@@ -43,7 +43,7 @@ class AdminLogin extends Component {
 		return (
 		  <div class="top-wrapper">
 		    <div>
-		      <h1 class="title">AdminLogin</h1>
+		      <h1 class="title">Customer Login</h1>
 		    </div>
 		    <div class="list-container">
 				<form onSubmit={this.handleSubmit}>
@@ -58,4 +58,4 @@ class AdminLogin extends Component {
 	}
 }
 
-export default AdminLogin;
+export default Login;

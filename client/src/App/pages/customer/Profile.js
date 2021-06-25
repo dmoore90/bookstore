@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../../static/styles.css'
+import '../../../static/styles.css'
 
-class AdminShop extends Component {
+class Profile extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -11,7 +11,7 @@ class AdminShop extends Component {
 	}
 
 	componentDidMount() {
-		fetch('http://localhost:3000/adminShop', {credentials: 'include'})
+		fetch('http://localhost:3000/customer/profile', {credentials: 'include'})
 			.then((res) => { 
 				if (res.status === 200) {
 					return res.json();
@@ -26,12 +26,13 @@ class AdminShop extends Component {
 		return (
 			<div className="top-wrapper">
 				<div>
-					<h1 className="title">Admin Shop</h1>
+					<h1 className="title">Shop</h1>
+				</div>
+				<div>
+					<h2>user</h2>
 				</div>
 				<div class="nav">
-			        <li><Link to={'./adminLogin'}><button variant="raised">AdminLogin</button></Link></li>
-			        <li><Link to={'./adminLogout'}><button variant="raised">AdminLogout</button></Link></li>
-		        	<li><Link to={'./createProduct'}><button variant="raised">Create Product</button></Link></li>
+			        <li><Link to={'./logout'}><button variant="raised">logout</button></Link></li>
 		        </div>
 				<div class="list-items">
 					{this.state.products.map(product =>
@@ -45,4 +46,4 @@ class AdminShop extends Component {
 	}
 }
 
-export default AdminShop;
+export default Profile;

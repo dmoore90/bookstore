@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const authenticateJWT = require('../security/authenticateJWT');
 const JWT_KEY = require('../config/security');
-
+const formValidation = require('./formValidation')
 
 exports.postAdminLogin = (req, res) => {
 	const username = req.body.username;
@@ -18,7 +18,7 @@ exports.postAdminLogin = (req, res) => {
 				if (valid) {
 					const token = jwt.sign({ id: user.dataValues.id, username: user.username }, JWT_KEY.secret, { expiresIn: "1h" });
 					res.cookie('auth', token, { httpOnly: true, secure: true, sameSite: true });
-					res.redirect('adminShop');
+					res.redirect('/admin/adminShop');
 				} else {
 					return res.sendStatus(401);
 				}
@@ -61,7 +61,7 @@ exports.postProduct = (req, res) => {
 		name: name,
 		price: price
 	}).then(success => {
-		return res.redirect('/adminShop')
+		return res.redirect('/admin/adminShop')
 	}).catch(err => {
 		console.log(err);
 		return res.sendStatus(404);
@@ -95,13 +95,12 @@ exports.postUpdateProduct = (req, res) => {
 
 	Product.findByPk(id)
 	.then(product => {
-		console.log(product.name)
 		product.name = name;
 		product.price = price;
 		return product.save();
 	})
 	.then(result => {
-		return res.redirect('/adminShop');
+		return res.redirect('/admin/adminShop');
 	})
 	.catch(err => {
 		console.log(err);
@@ -117,7 +116,7 @@ exports.deleteProduct = (req, res) => {
 	const id = req.body.id;
 	Product.destroy({ where: { id: id}})
 	.then(success => {
-		res.redirect('/adminShop');
+		return res.redirect('/admin/adminShop');
 	})
 	.catch(err => { console.log(err) });
 }

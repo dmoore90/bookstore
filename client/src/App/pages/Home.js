@@ -13,9 +13,9 @@ class Home extends Component {
           </div>
         </div>
         <div class="nav">
-            <li><Link to={'./adminLogin'}><button>Admin Login</button></Link></li>
-            <li><Link to={'./signup'}><button>Sign Up</button></Link></li>
-            <li><Link to={'./userLogin'}><button>User Login</button></Link></li>
+            <li><Link to={'./admin/login'}><button>Admin Login</button></Link></li>
+            <li><Link to={'./customer/register'}><button>Register</button></Link></li>
+            <li><Link to={'./customer/login'}><button>Login</button></Link></li>
             <li><Link to={'./shop'}><button>Shop</button></Link></li>
         </div>
       </div>      

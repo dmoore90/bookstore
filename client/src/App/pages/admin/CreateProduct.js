@@ -18,7 +18,7 @@ class CreateProduct extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		fetch('http://localhost:3000/createProduct', {
+		fetch('http://localhost:3000/admin/createProduct', {
 			method: 'POST',
 			withCredentials: true,
 			credentials: 'include',
@@ -29,7 +29,7 @@ class CreateProduct extends Component {
 		})
 		.then(res => {
 			if (res.status === 200) {
-				return this.props.history.push('/adminShop')
+				return this.props.history.push('/admin/shop')
 			} else {
 				const error = new Error(res.error);
 				throw error;
