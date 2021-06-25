@@ -6,7 +6,7 @@ class Profile extends Component {
 	constructor() {
 		super();
 		this.state = {
-			products: []
+			products: [],
 		}
 	}
 

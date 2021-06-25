@@ -58,7 +58,15 @@ exports.postLogin = (req, res) => {
 }
 
 exports.getProfile = (req, res) => {
-	return res.sendStatus(200);
+	Product.findAll()
+	.then(products => {
+		res.location('/customer/profile');
+		return res.status(200).json(products);
+	})
+	.catch(err => {
+		console.log(err);
+		return res.sendStatus(401);
+	})
 }
 
 exports.postLogout = (req, res) => {

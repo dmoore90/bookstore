@@ -22,7 +22,7 @@ class Register extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		fetch('http://localhost:3000/register', {
+		fetch('http://localhost:3000/customer/register', {
 			method: 'POST',
 			withCredentials: true,
 			credentials: 'include',

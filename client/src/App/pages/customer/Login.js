@@ -20,7 +20,7 @@ class Login extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		fetch('http://localhost:3000/login', {
+		fetch('http://localhost:3000/customer/login', {
 			method: 'POST',
 			withCredentials: true,
 			credentials: 'include',
