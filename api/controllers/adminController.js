@@ -108,3 +108,16 @@ exports.postUpdateProduct = (req, res) => {
 		return res.sendStatus(404);
 	})
 }
+
+exports.deleteProduct = (req, res) => {
+	if (req.user.username != "admin") {
+		return res.sendStatus(401);
+	}
+
+	const id = req.body.id;
+	Product.destroy({ where: { id: id}})
+	.then(success => {
+		res.redirect('/adminShop');
+	})
+	.catch(err => { console.log(err) });
+}

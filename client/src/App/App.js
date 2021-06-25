@@ -7,6 +7,7 @@ import AdminLogout from './pages/AdminLogout.js';
 import AdminShop from './pages/AdminShop.js';
 import CreateProduct from './pages/CreateProduct.js';
 import Product from './pages/Product.js';
+import Shop from './pages/Shop.js';
 
 class App extends Component {
 	render() {
@@ -21,6 +22,8 @@ class App extends Component {
 					<Route path="/adminShop" component={AdminShop}/>
 					<Route path="/createProduct" component={CreateProduct}/>
 					<Route path="/product/:id" component={Product}/>
+
+					<Route path="/shop" component={Shop}/>
 				</Switch>
 			</div>
 		)

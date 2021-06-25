@@ -82,7 +82,7 @@ class UpdateProduct extends Component {
 			    	<li><input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></li>
 			    	<label>price:</label> 
 			    	<li><input type="text" name="price" value={this.state.price} onChange={this.handleChange} /></li>
-			        <input type="submit" value="Submit" />
+			        <input type="submit" value="update" />
 			      </form>
 				</div>
 				<div>
