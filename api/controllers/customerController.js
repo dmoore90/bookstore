@@ -24,8 +24,10 @@ exports.postRegister = (req, res) => {
 			password: hashedPassword
 		})
 		.then(result => {
-			return res.redirect('/');
-		}).catch(err => { return res.sendStatus(400) });
+			// return res.redirect('/');
+			return res.sendStatus(200);
+		})
+		.catch(err => { return res.sendStatus(400) });
 	} else {
 		return res.sendStatus(400);
 	}
@@ -58,10 +60,12 @@ exports.postLogin = (req, res) => {
 }
 
 exports.getProfile = (req, res) => {
+	const data = [];
+	data.push([req.user.username])
 	Product.findAll()
 	.then(products => {
 		res.location('/customer/profile');
-		return res.status(200).json(products);
+		return res.status(200).json({products, username: req.user.username});
 	})
 	.catch(err => {
 		console.log(err);

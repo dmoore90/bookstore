@@ -6,13 +6,13 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <div class="top-wrapper">
+      <div className="container">
+        <div className="top-wrapper">
           <div>
-            <h1 class="title">Home</h1>
+            <h1 className="title">Home</h1>
           </div>
         </div>
-        <div class="nav">
+        <div className="nav">
             <li><Link to={'./admin/login'}><button>Admin Login</button></Link></li>
             <li><Link to={'./customer/register'}><button>Register</button></Link></li>
             <li><Link to={'./customer/login'}><button>Login</button></Link></li>

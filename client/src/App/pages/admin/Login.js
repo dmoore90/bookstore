@@ -41,19 +41,20 @@ class AdminLogin extends Component {
 
 	render() {
 		return (
-		  <div class="top-wrapper">
-		    <div>
-		      <h1 class="title">AdminLogin</h1>
-		    </div>
-		    <div class="list-container">
-				<form onSubmit={this.handleSubmit}>
-			        <div><label>username: <input type="text" name="username" value={this.state.email} onChange={this.handleChange} /></label></div>
-			        <div><label>password: <input type="password" name="password" value={this.state.password} onChange={this.handleChange} /></label></div>
-					<input type="submit" value="Submit" />
-				</form>        
-		    </div>
-
-		  </div>      
+			<div className="container">
+			  <div className="top-wrapper">
+			    <div>
+			      <h1 className="title">AdminLogin</h1>
+			    </div>
+			    <div className="list-container">
+					<form onSubmit={this.handleSubmit}>
+				        <div><label>username: <input type="text" name="username" value={this.state.email} onChange={this.handleChange} /></label></div>
+				        <div><label>password: <input type="password" name="password" value={this.state.password} onChange={this.handleChange} /></label></div>
+						<input type="submit" value="Submit" />
+					</form>        
+			    </div>
+			  </div>  
+		  </div>    
 		);
 	}
 }

@@ -40,18 +40,20 @@ class CreateProduct extends Component {
 
 	render() {
 		return (
-			<div className="top-wrapper">
-				<div>
-					<h1 class="title">Create Product</h1>	
-				</div>
-				<div class="list-container">
-			      <form onSubmit={this.handleSubmit}>
-			    	<label>name:</label>
-			    	<li><input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></li>
-			    	<label>price:</label> 
-			    	<li><input type="text" name="price" value={this.state.price} onChange={this.handleChange} /></li>
-			        <input type="submit" value="Submit" />
-			      </form>
+			<div className="container">
+				<div className="top-wrapper">
+					<div>
+						<h1 className="title">Create Product</h1>	
+					</div>
+					<div className="list-container">
+				      <form onSubmit={this.handleSubmit}>
+				    	<label>name:</label>
+				    	<li><input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></li>
+				    	<label>price:</label> 
+				    	<li><input type="text" name="price" value={this.state.price} onChange={this.handleChange} /></li>
+				        <input type="submit" value="Submit" />
+				      </form>
+					</div>
 				</div>
 			</div>
 		);

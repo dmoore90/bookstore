@@ -71,28 +71,30 @@ class UpdateProduct extends Component {
 
 	render(props) {
 		return (
-			<div className="top-wrapper">
-				<div>
-					<h1 class="title">Update Product</h1>
-				</div>
-				<div class="list-container">
-			      <form onSubmit={this.handleSubmit}>
-			      	<li><input type="hidden" name="id" value={this.state.id} onChange={this.handleChange} /></li>
-			    	<label>name:</label> 
-			    	<li><input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></li>
-			    	<label>price:</label> 
-			    	<li><input type="text" name="price" value={this.state.price} onChange={this.handleChange} /></li>
-			        <input type="submit" value="update" />
-			      </form>
-				</div>
-				<div>
-					<h1 class="title">Delete Product</h1>
-				</div>
-				<div>
-			      <form onSubmit={this.handleDelete}>
-			      	<input type="hidden" name="id" value={this.state.id} onChange={this.handleChange} />
-			        <input type="submit" value="delete" />
-			      </form>
+			<div className="container">
+				<div className="top-wrapper">
+					<div>
+						<h1 className="title">Update Product</h1>
+					</div>
+					<div className="list-container">
+				      <form onSubmit={this.handleSubmit}>
+				      	<li><input type="hidden" name="id" value={this.state.id} onChange={this.handleChange} /></li>
+				    	<label>name:</label> 
+				    	<li><input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></li>
+				    	<label>price:</label> 
+				    	<li><input type="text" name="price" value={this.state.price} onChange={this.handleChange} /></li>
+				        <input type="submit" value="update" />
+				      </form>
+					</div>
+					<div>
+						<h1 className="title">Delete Product</h1>
+					</div>
+					<div>
+				      <form onSubmit={this.handleDelete}>
+				      	<input type="hidden" name="id" value={this.state.id} onChange={this.handleChange} />
+				        <input type="submit" value="delete" />
+				      </form>
+					</div>
 				</div>
 			</div>
 		);

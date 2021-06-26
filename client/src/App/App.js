@@ -22,7 +22,7 @@ class App extends Component {
 					<Route path="/shop" component={Shop}/>
 
 					<Route path="/admin/Login" component={AdminLogin}/>
-					<Route path="/admin/logout" component={Logout}/>
+					<Route path="/admin/logout" component={AdminLogout}/>
 					
 					<Route path="/admin/shop" component={AdminShop}/>
 					<Route path="/admin/createProduct" component={CreateProduct}/>
