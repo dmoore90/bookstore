@@ -9,6 +9,10 @@ module.exports = {
             autoIncrement: true,
             primaryKey: true
           },
+          prod_number: {
+            type: Sequelize.STRING(45),
+            allowNull: false
+          },
           name: {
             type: Sequelize.STRING(45),
             allowNull: false

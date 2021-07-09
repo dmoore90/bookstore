@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import '../../../static/styles.css'
+import '../../../public/css/styles.css'
 
 class Login extends Component {
 	constructor(props) {

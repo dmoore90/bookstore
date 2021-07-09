@@ -11,3 +11,15 @@ exports.getShop = (req, res) => {
 		return res.sendStatus(401);
 	})
 }
+
+exports.getProduct = (req, res) => {
+	const id = req.params.id;
+	Product.findByPk(id)
+	.then(product => {
+		return res.status(200).json({product});
+	})
+	.catch(err => {
+		console.log(err);
+		return res.sendStatus(401);
+	})
+}

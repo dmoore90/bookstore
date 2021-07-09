@@ -4,6 +4,7 @@ class CreateProduct extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			prod_number: '',
 			name: '',
 			price: ''
 		};
@@ -47,6 +48,8 @@ class CreateProduct extends Component {
 					</div>
 					<div className="list-container">
 				      <form onSubmit={this.handleSubmit}>
+				      	<label>product number:</label>
+				      	<li><input type="text" name="prod_number" value={this.state.prod_number} onChange={this.handleChange} /></li>
 				    	<label>name:</label>
 				    	<li><input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></li>
 				    	<label>price:</label> 

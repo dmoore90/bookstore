@@ -54,10 +54,12 @@ exports.postProduct = (req, res) => {
 	if (req.user.username != "admin") {
 		return res.sendStatus(401);
 	}
+	const prod_number = req.body.prod_number;
 	const name = req.body.name;
 	const price = req.body.price;
 
 	Product.create({
+		prod_number: prod_number, 
 		name: name,
 		price: price
 	}).then(success => {

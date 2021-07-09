@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../../../static/styles.css';
+import '../../public/css/styles.css';
 
-class Profile_Detail extends Component {
+class ProductDetail extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			products: [],
-			username: []
+			product: []
 		}
 	}
 
 	componentDidMount() {
-		fetch('http://localhost:3000/profile')
+		const id = this.props.match.params.id;
+		fetch(`http://localhost:3000/product/${id}`)
 			.then((res) => {
 				if (res.status === 200) {
 					return res.json();
@@ -22,8 +22,7 @@ class Profile_Detail extends Component {
 			})
 			.then(data => {
 				this.setState({ 
-					products: data.products, 
-					username: data.username 
+					product: data.product
 				})
 			})
 	}
@@ -35,18 +34,15 @@ class Profile_Detail extends Component {
 					<div>
 						<h1 className="title">Product</h1>
 					</div>
-					<div>
-						<h2>{ this.state.username }</h2>
-					</div>
 					<div className="nav">
-				        <li><Link to={'./logout'}><button variant="raised">logout</button></Link></li>
+				        <li><Link to={'/'}><button variant="raised">home</button></Link></li>
 			        </div>
 					<div className="list-items">
-						{this.state.products.map(product =>
-							<Link to={`./product_details/${product.id}`}>
-								<li key={product.id}>{ product.name } { product.price }</li>
-							</Link>
-						)}
+						<p>{ this.state.product.name }</p>
+					</div>
+					<div>
+						<Link to={'#'}><button>buy</button></Link>
+						<Link to={'#'}><button>add to cart</button></Link>
 					</div>
 				</div>
 			</div>
@@ -54,4 +50,4 @@ class Profile_Detail extends Component {
 	}
 }
 
-export default Profile_Detail;
+export default ProductDetail;

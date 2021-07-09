@@ -12,6 +12,7 @@ import Register from './pages/customer/Register.js';
 import Profile from './pages/customer/Profile.js';
 import Login from './pages/customer/Login.js';
 import Logout from './pages/customer/Logout.js';
+import ProductDetail from './pages/ProductDetail.js';
 
 class App extends Component {
 	render() {
@@ -20,6 +21,7 @@ class App extends Component {
 				<Switch>
 					<Route exact path="/" component={Home}/>
 					<Route path="/shop" component={Shop}/>
+					<Route path="/product/:id" component={ProductDetail}/>
 
 					<Route path="/admin/Login" component={AdminLogin}/>
 					<Route path="/admin/logout" component={AdminLogout}/>
