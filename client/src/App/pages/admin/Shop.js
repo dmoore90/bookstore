@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../../../public/css/styles.css'
 import id1 from '../../../public/images/inventory/1234.png';
+// import '../../../public/images/inventory/1234.png';
+// var im = require('../../../public/images/inventory/1234.png');
 
 class AdminShop extends Component {
 	constructor() {
@@ -37,7 +39,7 @@ class AdminShop extends Component {
 					<div className="list-items">
 						{this.state.products.map(product =>
 							<Link to={`./product/${product.id}`}>
-								<img src={id1} alt="Id1" />
+								<img src={ id1 } alt="x" />
 								<li key={product.id}>{ product.name } { product.price }</li>
 							</Link>
 						)}

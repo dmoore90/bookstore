@@ -1,0 +1,25 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node api/app.js",
+    "server": "nodemon api/app.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmoore90/bookstore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmoore90/bookstore/issues"
+  },
+  "homepage": "https://github.com/dmoore90/bookstore#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
